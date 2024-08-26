@@ -11,10 +11,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class Demoqatest  {
+public class Demoqatest {
 
-       DemoqaPage1 page1= new DemoqaPage1();
-       private  ConfigDemo cfg = ConfigFactory.create(ConfigDemo.class);
+  DemoqaPage1 page1 = new DemoqaPage1();
+  private ConfigDemo cfg = ConfigFactory.create(ConfigDemo.class);
 
 
   @BeforeEach
@@ -43,6 +43,7 @@ public class Demoqatest  {
     page1.checkEmail();
     page1.checkName();
   }
+
   @Test
   @DisplayName("Открытие новой вкладки")
   public void DemoqaTest_2() {
