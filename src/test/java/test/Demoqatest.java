@@ -1,10 +1,8 @@
 package test;
 
-import static org.aeonbits.owner.ConfigFactory.getProperty;
-
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import config.ConfigDemo;
+import config.config;
 import config.DemoqaPage1;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,15 +12,16 @@ import org.junit.jupiter.api.Test;
 public class Demoqatest {
 
   DemoqaPage1 page1 = new DemoqaPage1();
-  private ConfigDemo cfg = ConfigFactory.create(ConfigDemo.class);
+  private config cfg = ConfigFactory.create(config.class);
 
 
   @BeforeEach
 
   public void setup() {
     Selenide.open(cfg.startpage());
-    Configuration.pageLoadStrategy = cfg.pageLoadStrategy();
-    Configuration.browserSize = cfg.browserSize();
+    Configuration.pageLoadStrategy = cfg.pageloadstrategy();
+    Configuration.browserSize = cfg.browsersize();
+
   }
 
 
@@ -34,10 +33,10 @@ public class Demoqatest {
     //кликаем по карточке elements
     page1.clickTextbox();
     //кликаем по карточке Textbox
-    page1.inputUserName(cfg.Name());
-    page1.inputUserEmail(cfg.Email());
-    page1.inputCurrentAddress(cfg.CurAddress());
-    page1.inputPermanentAddress(cfg.PerAddress());
+    page1.inputUserName(cfg.name());
+    page1.inputUserEmail(cfg.email());
+    page1.inputCurrentAddress(cfg.curaddress());
+    page1.inputPermanentAddress(cfg.peraddress());
     page1.ScrollSubmitBtn();
     page1.clickSubmitBtn();
     page1.checkEmail();
