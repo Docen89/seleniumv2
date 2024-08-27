@@ -21,8 +21,8 @@ public class Demoqatest {
 
   public void setup() {
     Selenide.open(cfg.startpage());
-    Configuration.pageLoadStrategy = "eager";
-    Configuration.browserSize = "1920x1080";
+    Configuration.pageLoadStrategy = cfg.pageLoadStrategy();
+    Configuration.browserSize = cfg.browserSize();
   }
 
 
